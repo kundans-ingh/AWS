@@ -1,0 +1,14 @@
+MAC COMMAND
+
+//Install and start VNC on the EC2 Mac instance:
+-----------------------------------------------
+
+
+sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false 
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+
+
+//Update the password for ec2-user
+-----------------------------------
+sudo passwd ec2-user
+
