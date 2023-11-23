@@ -1,0 +1,51 @@
+Custom VPC BastionHost 
+Access Private instance internet access Form Public Instance 
+
+Step 1
+
+Create 1 PVC
+Create 2 Subnet- Public and Private
+Create 2 Route tables- Public and Private
+		Public Route Table Associated with Public Subnet
+		Private Route Table Associated with Private Subnet
+Create 1 Internetgatways Attached to vpc for public Subnet
+		Internet gateways are routed to public Route table 0.0.0.0/0
+Create 1 NatGatway for private Subnet while creating choose public subnet
+		NatGatway is routed to private Route table 0.0.0.0/0
+---------------------------------------------------------------------------------------------
+Step 2
+
+Lunch 2 Instance from custom VPC Public and Private Subnet, Amazon Linux or Ubuntu
+ connect from the Public instance through SSH or CMD OR  direct connect
+code - 
+cd downloads
+dir
+then you see the .pem file just you have downloaded when you launch instances
+
+ssh -i ".pem" ec2-user@Public Ip
+
+Now you have been connected to a public IP and getting internet access.
+
+Now you have to connect private IP 
+ for importing the .pem file 
+go to key pairs select .pem and  action import key pairs
+it will show -----BEGIN RSA PRIVATE KEY-----
+copy that text 
+
+now come back to the terminal and type
+vi .pem
+insert for press i 
+paste that importing key pair text
+esc
+:wq!
+chmod 400 .pem
+
+and now try to connect private ip 
+ssh -i ".pem" ec2-user@Private Ip
+Now you have been connected to a private IP and getting internet access.
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
