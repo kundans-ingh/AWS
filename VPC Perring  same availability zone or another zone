@@ -1,0 +1,23 @@
+VPC Perring 
+same availability zone or another zone 
+
+Create 2 VPC
+Configure IGW, Subnet, Route table
+
+Peering connections 
+
+1 vpc will be send req to second vpc for accepting 
+
+configure to route table 
+so edit route in 1 vpc and click add route 
+enter the second vpc route table subnet ip in vpc 1 , target peering
+
+same configuration will be second vpc
+
+so edit route in second vpc and click add route 
+enter the 1 vpc route table subnet ip in vpc 2, target peering
+
+now configuration is done 
+
+Note: when you launching instance you have to configure security groups ssh, All traffic
+then your perring will be successfully ping with 1 vpc instance to another vpc instance using private ip.
