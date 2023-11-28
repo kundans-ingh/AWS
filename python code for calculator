@@ -1,0 +1,29 @@
+# Calculator code for python 
+
+
+first=int(input("enter first number :"))
+opeartor=input("enter opeartor +,-,*,/,%,** :")
+second=int(input("enter second number :"))
+
+if opeartor == "+" :
+    print(first + second)
+    
+elif opeartor == "-" :
+    print(first - second)
+        
+elif opeartor == "*" :
+    print(first * second)
+            
+elif opeartor == "/" :
+    print(first / second)
+                
+elif opeartor == "%" :
+    print(first % second)
+                    
+elif opeartor == "**" :
+    print(first ** second)
+                        
+else:
+    
+    print("Invalid opeartor used!!")
+            
